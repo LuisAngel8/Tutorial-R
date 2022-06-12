@@ -1,0 +1,315 @@
+\documentclass[9pt]{article}
+\usepackage[letterpaper,left=6.9cm,right=1.9cm,top=3.1cm,bottom=2.3cm]{geometry} % Márgenes y demás
+
+\input{Styles_ACCEFN.sty}  %%Llama el archivo de los estilos
+
+
+\setlength{\topskip}{0.5cm}
+\setlength{\parindent}{0mm}
+%\vspace{0.3cm} %Espacio reservado para la revista
+{\title{\fontsize{14}{14}\textbf{Tutorial de programación con R} \\[0.2cm]
+\textcolor{gray}{\textbf{Programming tutorial with R}\\[0.2cm]}}
+}
+
+\author[1]{\fontsize{9}{9} \textbf{Ronald Rivas}}
+\author[1]{\textbf{Fabián Olivella}}
+\author[1]{\textbf{Luis Carmona}}
+
+
+\affil[1]{\fontsize{8}{8} Universidad Nacional de Colombia; Escuela de pregrados. Estudiantes de ingeniería biológica.}
+%\affil[2]{Filiación Autor 2}
+%\affil[3]{Filiación Autor 3.}
+\date{June 8th}                     %% if you don't need date to appear
+\setcounter{Maxaffil}{0}
+
+
+%%%%%% Inicio del documento
+\begin{document}
+
+\maketitle
+\section*{Resumen}
+\justifying
+En muchos artículos académicos es común apreciar el uso de la estadística y el análisis de datos para llegar a una conclusión basada en los datos recopilados de la experimentación. El software estadístico R es uno de los más flexibles, potentes y profesionales que existen actualmente para realizar tareas estadísticas, desde las más elementales hasta las más avanzadas. Está desarrollado y soportado por una comunidad académica a nivel mundial, además es gratuito al público que lo necesite. Entre algunas de las características que hacen a R un lenguaje llamativo y altamente utilizado están que, cuenta con una cantidad de documentación en línea grande además de apoyo en línea. Cada día R mejora añadiendo numerosas librerías y paquetes gratis que expanden su capacidad. R al ser un lenguaje de programación de uso mayormente estadístico cuenta con un gran soporte de estructura de datos que le permiten resolver de forma sencilla y eficiente problemas de alto nivel, además de esto también es capaz de crear variedad de gráficos con una alta calidad. Este documento tiene como objetivo dar información sobre este lenguaje, proporcionando breves explicaciones sobre su instalación, estructuras de datos básicas y métodos u opciones de visualización de datos con la finalidad de proporcionar a las personas principiantes en el lenguaje unas bases para empezar.\\[0.2cm]
+\textbf{Palabras clave:} Tutorial; R Studio; Programación; Lenguaje R; análisis.
+
+
+\section*{Abstract}
+
+\justifying
+In many academic papers it is common to see the use of statistics and data analysis to reach a conclusion based on data collected from experimentation. The statistical software R is one of the most flexible, powerful and professional software currently available to perform statistical tasks, from the most elementary to the most advanced. It is developed and supported by a worldwide academic community, and it is free to the public that needs it. Among some of the features that make R a striking and highly used language are that it has a large amount of online documentation and online support. Every day R improves by adding numerous free libraries and packages that expand its capabilities. R being a programming language of mostly statistical use has a great support of data structure that allows it to solve in a simple and efficient way high level problems, besides this it is also able to create a variety of graphics with a high quality. This document aims to give information about this language, providing brief explanations about its installation, basic data structures and data visualization methods or options in order to provide beginners in the language a basis to get started.\\[0.2cm]
+\textbf{Keywords:} Tutorial; R Studio; Programming; Language R; analysis. 
+
+\section*{Instalación de R y R Studio}
+
+R es un lenguaje de programación gratuito y se encuentra disponible para todos aquellos que lo requieran. Es útil para el analisis y procesamiento de datos estadísticos. R Studio, es el IDE que será usado para utilizar R de forma más cómoda, por el conjunto de herramientas que este contiene y facilitan su uso \cite{Contento2020} \cite{UNIR2019}. 
+
+%%%%%%%%%%%%%%%%%%%% INSTALLATION DE R %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Instalación de R}
+\begin{enumerate}
+    \item Para instalar este lenguaje de programación, el primer paso a seguir es entrar al sitio web  de R en el equipo en el cual deseen instalarlo para luego dar click en el enlace que dice \textit{download R} que se encuentra el texto titulado como "Getting Started". El link del sitio es \url{https://www.r-project.org/}.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.7]{Imagenes/r.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \item Una vez realizado el paso anterior se abrirá una pestaña con varios enlaces de descarga. Se debe seleccionar el primer enlace que está debajo de donde dice \textbf{0-cloud}.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.6]{Imagenes/instr.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \item Dependiendo del sistema operativo (Windows, Linux o Mac en este caso trabajaremos con Windows) elegiremos la opción de descarga, así como también elegiremos el subdirectorio “base” y daremos click en \textit{“Download R-4.2.0 for Windows”} con un peso de 79MB.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{Imagenes/comprehen.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{Imagenes/r for w.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.6]{Imagenes/down.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \item Se ejecuta el archivo con la extensión \textit{".exe"} obtenido al dar en el enlace y acomoda las opciones de instalación según lo necesite o simplemente deja las que están por defecto y ya tendría instalado \textit{R} en su computador.
+    
+       \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.4]{Imagenes/instpackr.PNG}
+        \label{fig:my_label}
+    \end{figure}
+    
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% INSTALACIÓN DE R STUDIO %%%%%%%%%%%%%%%%%
+\subsection*{Instalación de R Studio}
+\begin{enumerate}
+    \item Para la instalación de R Studio, primero se debe ingresar a la página oficial de el IDE haciendo la búsqueda en el navegador o entrando al siguiente enlace \url{https://www.rstudio.com}.
+    
+    \item Una vez dentro de la página, se debe buscar el apartado que dice \textbf{"download"}, para luego dar click en \textbf{"download for windows"} (en caso de tener el sistema operativo windows). Luego de hacer eso comenzará a descargarse un archivo con la extensión \textit{".exe"}.
+    
+       \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.4]{Imagenes/rstudio.PNG}
+            \label{fig:my_label}
+        \end{figure}
+    
+    \item Una vez termine la descarga del archivo mencionado en el paso anterior, se deberá dar click derecho sobre él para posteriormente darle en \textit{ejecutar como administrador}. Luego se deberán aceptar los términos y condiciones además de elegir las opciones que más convengan  o simplemente dejar las que están por defecto.
+    
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Alternativas %%%%%%%%%%%%%%%%%
+\section*{Alternativas de R en la web}
+
+Existen algunas alternativas al método de instalación local de R y RStudio los cuales vendrían a ser los compiladores Online de R, entre ellos las páginas \textbf{rdrr.io} y \textbf{RStudio Cloud} que además de compilar códigos de R, usar tanto plot como ggplot, permiten buscar paquetes de R y encontrar documentación para el lenguaje de R.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.5]{Imagenes/rdrrio.PNG}
+            \label{fig:my_label}
+        \end{figure}
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.6]{Imagenes/rcloud.PNG}
+            \label{fig:my_label}
+        \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Estructura %%%%%%%%%%%%%%%%%
+\section*{Estructura de datos y su manipulación}
+
+Las estructuras de datos son aquellas que contienen la información, aunque también son herramientas empleadas en el análisis estadístico o para resolver problemas de alta complejidad de una forma más sencilla. Al hacer uso de R se hacen uso de estas estructuras, algunas estructuras de datos que nos encontraremos en R serán vectores, matrices o data frames \cite{Platzi2017}.
+
+\subsection*{Vectores}
+Los vectores son las estructuras más sencillas y de una dimensión empleados en R, estos están compuestos por uno o muchos datos de diferentes tipos. Para crear vectores se utiliza principalmente la función c( ) que hace referencia a combinar o concatenar, una vez creado nuestro vector podremos visualizar uno o todos sus elementos y asimismo poder cambiarlos \cite{Mendoza2018}.
+
+\begin{verbatim}
+    1 > vec1 = c(3, 4, 1, 2, 12)
+    2 > vec1
+    3 [1] 3 4 1 2 12
+    4 > vec1[5]
+    5 [1] 12
+    6 > vec1[3] = 19
+    7 > vec1
+    8 [1] 3 4 19 2 12
+\end{verbatim}
+    
+Al hacer uso de vectores podemos también añadir nuevos elementos a los mismos creando un nuevo vector o mediante la función append() :
+
+\begin{verbatim}
+    1 > Vec2= c(1, 3, 5)
+    2 > Vec3= c(2, 4, 6)
+    3 > Vec4= c(Vec2, Vec3)
+    4 Vec4
+    5 [1] 1 2 3 4 5 6
+\end{verbatim}
+
+Asi como tambien realizar operaciones entre vectores:
+
+
+\begin{verbatim}
+    1 > vec1= c(1, 2, 3)
+    2 > vec1 * 2
+    3 [1] 2 4 6
+    4 > vec1 + 2
+    5 [1] 3 4 5
+\end{verbatim}
+
+
+\subsection*{Matrices}
+Las matrices son en realidad un tipo de vector pero con algo más en particular, a diferencia de los vectores que son unidimensionales las matrices son vectores bidimensionales. Para crear matrices se utiliza la función matrix() en donde al igual que en un vector se ingresan los datos y también como las matrices son de 2 dimensiones se puede determinar tanto el número de columnas (ncol) y el de filas (nrow) \cite{Torfs2014} \cite{Paradis2003}.
+
+\begin{verbatim}
+    1 mat=matrix(data=c(3, 2, 1, 4, 5, 6, 9, 8, 7),ncol=3)
+    2 > mat
+    3      [,1] [,2] [,3]
+    4 [1,]  3    2    1
+    5 [2,]  4    5    6
+    6 [3,]  9    8    7
+\end{verbatim}
+
+Al emplear matrices podemos realizar diversas acciones como con los vectores operaciones aritméticas.
+
+\begin{verbatim}
+    1 mat2 =  matrix(1:9, nrow = 3, ncol = 3)
+    2 mat2
+    3       [,1] [,2] [,3]
+    4 [1,]  1    4    7
+    5 [2,]  2    5    8
+    6 [3,]  3    6    9
+    7 mat2 * 3
+    8       [,1] [,2] [,3]
+    9 [1,]  3    12   21
+   10 [2,]  6    15   24
+   11 [3,]  9    18   27
+\end{verbatim}
+
+\subsection*{Data frames}
+Una forma sencilla de ver a los data frames es como matrices con títulos o nombres en sus columnas. Los data frames o marco de datos son estructuras de datos bidimensionales (al igual que las matrices) que a diferencia de las matrices estos sí pueden contener datos heterogéneos, son muy utilizados en los análisis estadísticos tanto así que te resultará familiar a los datos presentes en hojas de excel \cite{Paradis2003} \cite{Navarro2016}.
+
+Para crear un data frame se utiliza la función data.frame en donde se tendrá que ingresar la cantidad de vectores correspondientes a las columnas (estos vectores deben tener la misma cantidad de datos).
+
+\begin{verbatim}
+    1 RegistroEdades <- data.frame("entero" = 1:4,
+    2       "Individuo" = c("Carlos", "Brayan", "Nicolas", "Vanessa"),
+    3       "Edad" = c(16, 18, 20, 15))
+    4 > RegistroEdades
+    5      Entero  Individuo  Edad
+    6 [1]	 1       Carlos     16	
+    7 [2]	 2       Brayan     18
+    8 [3]	 3       Nicolás    20
+    9 [4]	 4       Vanessa    15
+\end{verbatim}
+
+Al igual que con las otras estructuras de datos, con los data frames también se pueden hacer manipular para modificar la información que este lleva dentro, como por ejemplo, para añadir una nueva columna al data frame:
+
+\begin{verbatim}
+    1 RegistroEdades$"Decimales" = c(1.2, 3.4, 4.5, 5.6)
+    2 > RegistroEdades
+    3      Entero  Individuo  Edad  Decimales
+    4 [1]	 1       Carlos     16    1.2
+    5 [2]	 2       Brayan     18    3.4
+    6 [3]	 3       Nicolás    20    4.5
+    7 [4]	 4       Vanessa    15    5.6
+\end{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Visualización %%%%%%%%%%%%%%%%%
+\section*{Visualización}
+
+El graficar o visualizar los datos nos permite observar el comportamiento de los mismos, es una actividad que toma una gran importancia a la hora de hacer análisis estadísticos o proponer hipótesis, debido a esto R posee una gran variedad de librerías así como también varias opciones de gráficos como plot(), hist(), barplot(), pie(), boxplot() \cite{Torfs2014}.
+
+\subsection*{\textbf{Plot}}
+Representa una de las formas más simples de  graficar en R, las formas de graficar empleando esta función dependerá del tipo de datos que se le ingresen. La función plot() pedirá valores con respecto a 2 variables tal como plot(x, y) en donde x corresponde al eje X y la Y a su respectivo eje \cite{Santana2016}.
+
+\begin{verbatim}
+    1 x <- seq(0,100,length=50)
+    2 y <- c(seq(30,50, length=25), seq(50,20, length=25))
+    3 x
+    4 y
+    5 plot(x,y, xlab= "Eje X", ylab= "Eje y", type= "l", col= "Purple", 
+              main= "Gráfica en R empleando Plot()")
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Imagenes/Rplot.png}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{\textbf{Hist}}
+Representa un histograma para diferentes variables continuas teniendo en cuenta la distribución de frecuencia de los datos continuos, permitiéndonos de esta forma identificar asimetrías o valores atípicos \cite{Santana2016}.
+
+\begin{verbatim}
+    1 iris
+    2 hist(iris$Sepal.Length, main="Histograma Largo del sépalo", 
+    3      xlab="longitud en cm", ylab="Frecuencia", col="green")
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Imagenes/Rplot01.png}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{\textbf{Barplot}}
+Es utilizado para representar diagramas de barras, parecido al histograma con la diferencia de que este gráfica variables discretas en barras separadas en lugar de pegadas \cite{Santana2016}.
+
+\begin{verbatim}
+    1 mtcars
+    2 x<- table(mtcars$cyl)
+    3 barplot(x, main="Número de cilindros", xlab= "Cilindros", 
+    4         ylab="Frecuencia")
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Imagenes/Rplot02.png}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{\textbf{Pie}}
+Nos ofrece la misma información que un gráfico de barras (función barplot()) pero en forma de diagrama de torta o gráfico circular \cite{Santana2016}.
+
+\begin{verbatim}
+    1 Porcentajes<- c(42,32,15,11)
+    2 labels<- c("Hombres","Mujeres","Niños","Mascotas")
+    3 pie(Porcentajes,labels,main="Distribución de población doméstica")
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Imagenes/Rplot03.png}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{\textbf{Boxplot}}
+Representa una gráfica de cajas y bigotes, esta gráfica asu vez nos muestra 5 números importantes en el análisis estadístico siendo estos el número o valor mínimo, el primer cuartil, el segundo cuartil que corresponde a la mediana, el tercer cuartil y el valor máximo \cite{Santana2016}.
+
+\begin{verbatim}
+    1 iris
+    2 boxplot(iris[ ,-5], main="Diagrama de cajas y bigotes",
+    3         xlab="Dimensiones", ylab="Longitud en cm", col="yellow")
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Imagenes/Rplot04.png}
+    \label{fig:my_label}
+\end{figure}
+
+%%%% Bibliografía
+\bibliography{bibliography}
+\bibliographystyle{apacite} %%No cambiar el estilo de la bibliografía, el formato es propio de la revista
+
+\end{document}
